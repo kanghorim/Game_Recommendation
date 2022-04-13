@@ -2,7 +2,7 @@ import pandas as pd
 from konlpy.tag import Okt
 import re
 
-df = pd.read_csv('./crawling_data/datasets/Game_reviews_ALL_Duplicates.csv')
+df = pd.read_csv('./crawling_data/datasets/cleaned_game_Data.csv',index_col= 0)
 df.dropna(inplace=True)
 print(df.head())
 df.info()

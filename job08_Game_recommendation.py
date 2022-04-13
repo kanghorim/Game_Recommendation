@@ -29,7 +29,7 @@ with open('./models/tfidf01.pickle', 'rb') as f:
 # print(df_reviews.iloc[movie_idx, 0])
 
 embedding_model = Word2Vec.load('./models/word2vecModel_Game.model')
-key_word = '메이플'
+key_word = '마블'
 sim_word = embedding_model.wv.most_similar(key_word, topn=10)
 sentence = [key_word] * 11
 

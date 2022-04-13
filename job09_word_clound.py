@@ -13,10 +13,10 @@ font_name = font_manager.FontProperties(
 mpl.rcParams['axes.unicode_minus']=False
 rc('font', family=font_name)
 
-df = pd.read_csv('./crawling_data/datasets/Game_reviews_ALL_Preprocessing_2.csv')
+df = pd.read_csv('./crawling_data/datasets/Game_reviews_ALL_Post.csv')
 print(df.head())
 
-words = df.iloc[105, 1]
+words = df.iloc[214, 1]
 print(words)
 
 words = words.split()
@@ -26,7 +26,7 @@ worddict_1 = collections.Counter(words)
 worddict_1 = dict(worddict_1)
 print(worddict_1)
 
-words = df.iloc[1, 1]
+words = df.iloc[207, 1]
 print(words)
 
 words = words.split()

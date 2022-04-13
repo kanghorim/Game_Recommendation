@@ -23,7 +23,7 @@ for review in df.cleaned_sentences:
     cleaned_sentences.append(cleaned_sentence)
 df['cleaned_sentences'] = cleaned_sentences
 df.dropna(inplace=True)
-df.to_csv('./crawling_data/datasets/Game_reviews_ALL_Preprocessing_2.csv',encoding='utf-8-sig',
+df.to_csv('./crawling_data/datasets/Game_reviews_ALL_Post.csv',encoding='utf-8-sig',
           index=False)
 df.info()
 print('end')
