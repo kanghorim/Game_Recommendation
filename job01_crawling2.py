@@ -3,7 +3,7 @@ import pandas as pd
 import time
 
 option = webdriver.ChromeOptions()
-option.add_argument('headless')
+#option.add_argument('headless')
 option.add_argument('lang=ko_KR')
 option.add_argument('--no-sandbox')
 option.add_argument('--disable-dev-shm-usage')
@@ -15,7 +15,7 @@ titles = []
 reviews = []
 scores = []
 genres = []
-url = 'https://play.google.com/store/apps/collection/cluster?clp=ogoQCAkSBEdBTUUqAggCUgIIAQ%3D%3D:S:ANO1ljKygT0&gsr=ChOiChAICRIER0FNRSoCCAJSAggB:S:ANO1ljLjwLA&hl=ko&gl=US'
+url = 'https://play.google.com/store/apps/collection/cluster?clp=ogouCAESBEdBTUUaHAoWcmVjc190b3BpY190SmNKeEhpendOVRA7GAMqAggCUgIIAg%3D%3D:S:ANO1ljK6Ibs&gsr=CjGiCi4IARIER0FNRRocChZyZWNzX3RvcGljX3RKY0p4SGl6d05VEDsYAyoCCAJSAggC:S:ANO1ljJZT8U&hl=ko&gl=US'
 
 driver.get(url)
 print(url)
@@ -41,7 +41,7 @@ genre_xpath = '//*[@id="fcxH9b"]/div[4]/c-wiz[2]/div/div[2]/div/div/main/c-wiz[1
 #//*[@id="fcxH9b"]/div[4]/c-wiz[5]/div/div[2]/div/div/main/div/div[1]/div[2]/div/div[2]/div/div[2]/div[2]/span[1]
 #//*[@id="fcxH9b"]/div[4]/c-wiz[5]/div/div[2]/div/div/main/div/div[1]/div[2]/div/div[13]/div/div[2]/div[2]/span[1]
 
-for i in range(0,200):
+for i in range(1,200):
     try: # 페이지 안에 게임이 200개 안되는게 있음
         driver.get(url)
         SCROLL_PAUSE_SEC = 1
@@ -111,7 +111,7 @@ for i in range(0,200):
             print(len(genres))
             df = pd.DataFrame({'title': titles, 'reviews': reviews, 'scores': scores, 'genres': genres})
             print(df.tail())
-            df.to_csv('./crawling_data/reviews_free_best_score_game.csv', encoding='utf-8-sig', index=False)
+            df.to_csv('./crawling_data/reviews_free_casual_game.csv', encoding='utf-8-sig', index=False)
             print(df.tail())
         except:
             print('erroe02')

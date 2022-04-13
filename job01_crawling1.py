@@ -15,8 +15,7 @@ titles = []
 reviews = []
 scores = []
 genres = []
-url = 'https://play.google.com/store/apps/collection/cluster?clp=ogoQCAkSBEdBTUUqAggCUgIIAQ%3D%3D:S:ANO1ljKygT0&gsr=ChOiChAICRIER0FNRSoCCAJSAggB:S:ANO1ljLjwLA&hl=ko&gl=US'
-
+url = 'https://play.google.com/store/apps/collection/cluster?clp=ogouCAESBEdBTUUaHAoWcmVjc190b3BpY19ZYWtDeDlSSTNibxA7GAMqAggCUgIIAg%3D%3D:S:ANO1ljI7UYE&gsr=CjGiCi4IARIER0FNRRocChZyZWNzX3RvcGljX1lha0N4OVJJM2JvEDsYAyoCCAJSAggC:S:ANO1ljLZvWI&hl=ko&gl=US'
 driver.get(url)
 print(url)
 
@@ -111,7 +110,7 @@ for i in range(0,200):
             print(len(genres))
             df = pd.DataFrame({'title': titles, 'reviews': reviews, 'scores': scores, 'genres': genres})
             print(df.tail())
-            df.to_csv('./crawling_data/reviews_free_best_score_game.csv', encoding='utf-8-sig', index=False)
+            df.to_csv('./crawling_data/reviews_free_game_card_games.csv', encoding='utf-8-sig', index=False)
             print(df.tail())
         except:
             print('erroe02')
