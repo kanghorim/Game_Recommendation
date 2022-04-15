@@ -9,7 +9,7 @@ stopwords = pd.read_csv('./crawling_data/stopwords.csv')
 stopwords_list = list(stopwords['stopword'])
 cleaned_sentences = []
 stopwords_movie = ['게임', '좋다','있다','없다','같다','리뷰','해주다','이다','재밌다','되다',
-                   '있다','것']
+                   '있다','것','정도','오다','이건']
 stopwords_list = stopwords_list + stopwords_movie
 for review in df.cleaned_sentences:
     review_word = review.split(' ')
