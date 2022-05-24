@@ -108,9 +108,11 @@ for i in range(0,200):
             print(len(reviews))
             print(len(scores))
             print(len(genres))
+            #각 데이터 프레임을 title, reviews,score, genres로 정해줌
             df = pd.DataFrame({'title': titles, 'reviews': reviews, 'scores': scores, 'genres': genres})
             print(df.tail())
             df.to_csv('./crawling_data/reviews_free_game_card_games.csv', encoding='utf-8-sig', index=False)
+            # crawling_data폴더 안에 csv파일 생성후 저장 한글깨짐 방지를 위한 utf-8-sig 추가
             print(df.tail())
         except:
             print('erroe02')
