@@ -1,3 +1,4 @@
+# 1.Word2Vec을 이용해서 나온 유사도를 matplotlib을 이용한 시각화 모듈
 import pandas as pd
 import matplotlib.pyplot as plt
 from gensim.models import Word2Vec
@@ -5,6 +6,7 @@ from sklearn.manifold import TSNE
 from matplotlib import font_manager, rc
 import matplotlib as mpl
 
+# 2.한글 폰트가 깨져서 malgun이라는 폰트를 넣어줌
 font_path = './malgun.ttf'
 font_name = font_manager.FontProperties(
     fname=font_path).get_name()
@@ -19,14 +21,16 @@ rc('font', family=font_name)
 # plt.rc('font', family='NanumBarunGothic')
 # mpl.font_manager._rebuild()
 
+# 3.Word2Vec을 불러오고 키워드를 검색을 위한 코드
 embedding_model = Word2Vec.load('./models/word2vecModel_Game.model')
-print(list(embedding_model.wv.index_to_key))
-print(len(list(embedding_model.wv.index_to_key)))
-key_word = '유희왕'
-sim_word = embedding_model.wv.most_similar(key_word, topn=20)
+print(list(embedding_model.wv.index_to_key)) # Word2Vec안에 있는 key_word를 보여줌
+print(len(list(embedding_model.wv.index_to_key))) # key_word 개수 확인
+key_word = input('단어를 입력하면 유사도를 보여드립니다.')
+sim_word = embedding_model.wv.most_similar(key_word, topn=10) #입력한 유사한 단어 10개선정
 print(sim_word)
 print(len(sim_word))
 
+#4. 유사도를 시각화 하기위한 코드
 vectors = []
 labels = []
 for label, _ in sim_word:
